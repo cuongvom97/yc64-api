@@ -12,6 +12,16 @@ from app.db.database import Base
 class BaseModel(Base):
     __abstract__ = True
 
+    """CODE_LENGTH = 20
+
+    NAME_LENGTH = 150
+
+    PHONE_LENGTH = 20
+
+    EMAIL_LENGTH = 100
+
+    ADDRESS_LENGTH = 255
+    """
     id: Mapped[int] = mapped_column(
         Integer,
         primary_key=True,

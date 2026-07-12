@@ -6,8 +6,8 @@ from sqlalchemy.orm import relationship
 from app.models.base_model import BaseModel
 
 
-class Unit(BaseModel):
-    __tablename__ = "units"
+class Category(BaseModel):
+    __tablename__ = "categories"
 
     code: Mapped[str] = mapped_column(
         String(20),
@@ -22,6 +22,11 @@ class Unit(BaseModel):
         index=True,
     )
 
+    description: Mapped[str | None] = mapped_column(
+        String(255),
+        nullable=True,
+    )
+
     products: Mapped[list["Product"]] = relationship(
-        back_populates="unit",
+        back_populates="category",
     )
